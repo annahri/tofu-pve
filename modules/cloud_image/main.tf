@@ -8,4 +8,5 @@ resource "proxmox_virtual_environment_download_file" "ci" {
   node_name    = var.node_name
   url          = var.image_url
   file_name    = local.ci_filename
+  verify       = var.image_url_verify
 }
