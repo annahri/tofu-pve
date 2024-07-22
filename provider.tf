@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "bpg/proxmox"
-      version = "0.61.1"
+      version = "~> 0.61.1"
     }
   }
 }
@@ -10,6 +10,7 @@ terraform {
 provider "proxmox" {
   endpoint  = var.pve_api_endpoint
   api_token = var.pve_api_token
+  insecure  = var.pve_api_insecure
 
   ssh {
     node {
