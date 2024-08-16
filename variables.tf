@@ -8,6 +8,12 @@ variable "pve_api_endpoint" {
   description = "PVE API url (e.g. https://pve.example.com:8006/)"
 }
 
+variable "pve_api_insecure" {
+  type        = bool
+  description = "Whether to skip TLS verification when accessing the api endpoint"
+  default     = false
+}
+
 variable "node_name" {
   type        = string
   description = "PVE Node name"

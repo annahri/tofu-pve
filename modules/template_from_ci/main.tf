@@ -10,8 +10,7 @@ resource "proxmox_virtual_environment_vm" "template" {
   tablet_device = false
 
   agent {
-    enabled = true
-    trim    = true
+    enabled = var.guest_agent
   }
 
   cpu {
@@ -35,7 +34,7 @@ resource "proxmox_virtual_environment_vm" "template" {
   scsi_hardware = var.scsi_hardware
 
   disk {
-    datastore_id = var.datastore_id
+    datastore_id = var.storage_id
     file_id      = var.cloud_image_id
     interface    = var.disk_interface
     iothread     = true
@@ -48,7 +47,7 @@ resource "proxmox_virtual_environment_vm" "template" {
   }
 
   initialization {
-    datastore_id = var.datastore_id
+    datastore_id = var.storage_id
     user_account {
       username = var.user_name
       keys     = local.public_keys

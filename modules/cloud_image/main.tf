@@ -4,7 +4,7 @@ locals {
 
 resource "proxmox_virtual_environment_download_file" "ci" {
   content_type = "iso"
-  datastore_id = var.image_datastore
+  datastore_id = var.image_storage
   node_name    = var.node_name
   url          = var.image_url
   file_name    = local.ci_filename

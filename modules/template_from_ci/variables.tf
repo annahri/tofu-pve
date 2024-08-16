@@ -12,9 +12,16 @@ variable "node_name" {
   type        = string
   description = "Node name"
 }
-variable "datastore_id" {
+
+variable "storage_id" {
   type        = string
-  description = "The datastore which the disk will live into"
+  description = "The storage which the disk will live into"
+}
+
+variable "guest_agent" {
+  type        = bool
+  description = "Enable/disable guest agent. Only enable if you're sure the image is shipped with qemu-guest-agent."
+  default     = false
 }
 
 variable "cpu_type" {

@@ -14,7 +14,7 @@ variable "node_name" {
   description = "Name of the node"
 }
 
-variable "image_datastore" {
+variable "image_storage" {
   type        = string
   description = "The storage where the image will be stored in"
 }
